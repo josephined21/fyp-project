@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>FYP</title>
+    <title>Four Year Planner</title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,7 +26,9 @@
                     <p class="control is-expanded" id="searchbar">
                         <input class="input" id="txt-search" type="input" placeholder="Search For A Course" value=''>
                     </p>
-                    <div id="filter-records"></div> <!-- style="overflow: scroll;" -->
+                    <div id="filter-records">
+                    </div>
+
                 </div>
             </form>
         </div>
@@ -252,15 +254,15 @@
             let code, title, credits, year;
 
             var regex = new RegExp(searchField, "i");
-            var output = '<div class="row">';
+            var output = '<div class="row" id="dropdown-menu">';
 
             $.each(data, function (key, val) {
                 if ((val.OfferingName.search(regex) != -1) || (val.Title.search(regex) != -1)) {
                     code = val.OfferingName;
                     code = code.substring(0, 2) + code.substring(3, 6) + code.substring(7);
-
-                    output += '<h5 class="title is-6" onclick="addCourse(\'' + val.OfferingName + '\',\'' + val.Title + '\',\'' + val.Credits + '\',\'' + val.Areas + '\');">' + val.OfferingName + '</h5>';
-                    output += '<p class=\"subtitle is-6\">' + val.Title + " (" + val.Credits + ")" + '</p>';
+                    output += '<a class="dropdown-item" onclick="addCourse(\'' + val.OfferingName + '\',\'' + val.Title + '\',\'' + val.Credits + '\',\'' + val.Areas + '\');">';
+                    output += val.OfferingName + ":  " + val.Title + " (" + val.Credits + ")";
+                    output += '</a>';
                 }
             });
             output += '</div>';
