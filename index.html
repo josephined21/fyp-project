@@ -7,12 +7,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <link href="static/font-awesome/css/all.css" rel="stylesheet">
 </head>
 
 <body>
@@ -21,194 +20,255 @@
             <h3 class="title is-3 fyp">Four Year Plan</h3>
         </div>
 
-        <div class="field">
+        <div class="field is-grouped">
             <form role="form">
-                <div class="form-group navbar-item has-dropdown is-active">
-                    <div class="control has-icons-left" id="searchbar">
+                <div class="form-group">
+                    <p class="control is-expanded" id="searchbar">
                         <input class="input" id="txt-search" type="input" placeholder="Search For A Course" value=''>
-                        <span class="icon is-small is-left">
-                            <i class="fas fa-search"></i>
-                        </span>
-                        <div class="navbar-dropdown" id="filter-records"></div>
-                    </div>
+                    </p>
+                    <div id="filter-records"></div> <!-- style="overflow: scroll;" -->
                 </div>
             </form>
         </div>
     </nav>
 
     <div class="container"><br><br><br>
-        <div class="row">
-            <div class="columns is-vcentered">
-                <div class="column">
-                    <h4 class="title is-4">Freshman</h4>
-                    <h5 class="subtitle is-5">Fall</h5>
-                    <div class="card sem" ondrop="drop(event, fall1)" ondragover="allowDrop(event)">
-                        <div id="fall1">
-                            <div class="card drag" id="EN500112" draggable="true" ondragstart="drag(event)" style="background-color: #b0d1f3;
+        <div class="columns is-vcentered">
+            <div class="column">
+                <h4 class="title is-4">Freshman</h4>
+                <h5 class="subtitle is-5">Fall</h5>
+                <div class="card sem" ondrop="drop(event, fall1)" ondragover="allowDrop(event)">
+                    <div id="fall1">
+                        <div class="card drag" id="EN500112" draggable="true" ondragstart="drag(event)" style="background-color: #2374C7;
                         color: white;">
-                                <button class="delete is-small" id="dEN500112"
-                                    onclick="deleteCourse('EN500112');"></button>
-                                <div class="card-content">
-                                    EN.500.112<br>
-                                    Gateway Computing: Java (3)
-                                </div>
+                            <button class="delete is-small" id="dEN500112" onclick="deleteCourse('EN500112');"></button>
+                            <div class="card-content">
+                                EN.500.112<br>
+                                Gateway Computing: Java (3)
                             </div>
+                        </div>
 
-                            <div class="card drag" id="EN601104" draggable="true" ondragstart="drag(event)" style="background-color: #2374C7;
+                        <div class="card drag" id="EN601104" draggable="true" ondragstart="drag(event)" style="background-color: #2374C7;
                         color: white;">
-                                <button class="delete is-small" id="dEN601104"
-                                    onclick="deleteCourse('EN601104');"></button>
-                                <div class="card-content">
-                                    EN.601.104<br>
-                                    Computer Ethics (1)
-                                </div>
+                            <button class="delete is-small" id="dEN601104" onclick="deleteCourse('EN601104');"></button>
+                            <div class="card-content">
+                                EN.601.104<br>
+                                Computer Ethics (1)
                             </div>
                         </div>
-                        <footer class="card-footer card-footer-padding">
-                            <p class="credits" id="cfall1">4 credits</p>
-                        </footer>
-                    </div><br>
-                </div>
-                <div class="column">
-                    <h5 class="subtitle is-5">Spring</h5>
-                    <div class="card sem" ondrop="drop(event, spring1)" ondragover="allowDrop(event)">
-                        <div id="spring1">
-                            <div class="card drag" id="EN601220" draggable="true" ondragstart="drag(event)" style="background-color: #2374C7;
-                        color: white;">
-                                <button class="delete is-small" id="dEN601220"
-                                    onclick="deleteCourse('EN601220');"></button>
-                                <div class="card-content">
-                                    EN.601.220<br>
-                                    Intermediate Programming (4)
-                                </div>
-                            </div>
-                        </div>
-                        <footer class="card-footer card-footer-padding">
-                            <p class="credits" id="cspring1">4 credits</p>
-                        </footer>
                     </div>
-                </div>
-                <div class="column">
-                    <h4 class="title is-4">Sophomore</h4>
-                    <h5 class="subtitle is-5">Fall</h5>
-                    <div class="card sem" ondrop="drop(event, fall2)" ondragover="allowDrop(event)">
-                        <div id="fall2">
-                            <div class="card drag" id="EN601226" draggable="true" ondragstart="drag(event)" style="background-color: #2374C7;
+                    <footer class="card-footer card-footer-padding">
+                        <p class="credits" id="cfall1">4 credits</p>
+                    </footer>
+                </div><br>
+                <h5 class="subtitle is-5">Spring</h5>
+                <div class="card sem" ondrop="drop(event, spring1)" ondragover="allowDrop(event)">
+                    <div id="spring1">
+                        <div class="card drag" id="EN601220" draggable="true" ondragstart="drag(event)" style="background-color: #2374C7;
                         color: white;">
-                                <button class="delete is-small" id="dEN601226"
-                                    onclick="deleteCourse('EN601226');"></button>
-                                <div class="card-content">
-                                    EN.601.226<br>
-                                    Data Structures (4)
-                                </div>
-                            </div>
-
-                            <div class="card drag" id="EN601229" draggable="true" ondragstart="drag(event)" style="background-color: #2374C7;
-                        color: white;">
-                                <button class="delete is-small" id="dEN601229"
-                                    onclick="deleteCourse('EN601229');"></button>
-                                <div class="card-content">
-                                    EN.601.229<br>
-                                    Computer System Fundamentals (3)
-                                </div>
+                            <button class="delete is-small" id="dEN601220" onclick="deleteCourse('EN601220');"></button>
+                            <div class="card-content">
+                                EN.601.220<br>
+                                Intermediate Programming (4)
                             </div>
                         </div>
-                        <footer class="card-footer card-footer-padding">
-                            <p class="credits" id="cfall2">7 credits</p>
-                        </footer>
-                    </div><br>
-                </div>
-                <div class="column">
-                    <h5 class="subtitle is-5">Spring</h5>
-                    <div class="card sem" ondrop="drop(event, spring2)" ondragover="allowDrop(event)">
-                        <div id="spring2">
-                            <div class="card drag" id="EN601230" draggable="true" ondragstart="drag(event)" style="background-color: #2374C7;
-                        color: white;">
-                                <button class="delete is-small" id="dEN601230"
-                                    onclick="deleteCourse('EN601230');"></button>
-                                <div class="card-content">
-                                    EN.601.230<br>
-                                    Mathematical Foundations for CS (4)
-                                </div>
-                            </div>
-                        </div>
-                        <footer class="card-footer card-footer-padding">
-                            <p class="credits" id="cspring2">4 credits</p>
-                        </footer>
                     </div>
+                    <footer class="card-footer card-footer-padding">
+                        <p class="credits" id="cspring1">4 credits</p>
+                    </footer>
                 </div>
             </div>
-            <div class="row">
-                <div class="columns is-vcentered">
-
-                    <div class="column">
-                        <h4 class="title is-4">Junior</h4>
-                        <h5 class="subtitle is-5">Fall</h5>
-                        <div class="card sem" ondrop="drop(event, fall3)" ondragover="allowDrop(event)">
-                            <div id="fall3">
-                                <div class="card drag" id="EN601433" draggable="true" ondragstart="drag(event)" style="background-color: #2374C7;
+            <div class="column">
+                <h4 class="title is-4">Sophomore</h4>
+                <h5 class="subtitle is-5">Fall</h5>
+                <div class="card sem" ondrop="drop(event, fall2)" ondragover="allowDrop(event)">
+                    <div id="fall2">
+                        <div class="card drag" id="EN601226" draggable="true" ondragstart="drag(event)" style="background-color: #2374C7;
                         color: white;">
-                                    <button class="delete is-small" id="dEN601433"
-                                        onclick="deleteCourse('EN601433');"></button>
-                                    <div class="card-content">
-                                        EN.601.433<br>
-                                        Intro to Algorithms (3)
-                                    </div>
-                                </div>
+                            <button class="delete is-small" id="dEN601226" onclick="deleteCourse('EN601226');"></button>
+                            <div class="card-content">
+                                EN.601.226<br>
+                                Data Structures (4)
                             </div>
-                            <footer class="card-footer card-footer-padding">
-                                <p class="credits" id="cfall3">3 credits</p>
-                            </footer>
-                        </div><br>
-                    </div>
-                    <div class="column">
-                        <h5 class="subtitle is-5">Spring</h5>
-                        <div class="card sem" ondrop="drop(event, spring3)" ondragover="allowDrop(event)">
-                            <div id="spring3"></div>
-                            <footer class="card-footer card-footer-padding">
-                                <p class="credits" id="cspring3">0 credits</p>
-                            </footer>
+                        </div>
+
+                        <div class="card drag" id="EN601229" draggable="true" ondragstart="drag(event)" style="background-color: #2374C7;
+                        color: white;">
+                            <button class="delete is-small" id="dEN601229" onclick="deleteCourse('EN601229');"></button>
+                            <div class="card-content">
+                                EN.601.229<br>
+                                Computer System Fundamentals (3)
+                            </div>
                         </div>
                     </div>
-                    <div class="column">
-                        <h4 class="title is-4">Senior</h4>
-                        <h5 class="subtitle is-5">Fall</h5>
-                        <div class="card sem" ondrop="drop(event, fall4)" ondragover="allowDrop(event)">
-                            <div id="fall4"></div>
-                            <footer class="card-footer card-footer-padding">
-                                <p class="credits" id="cfall4">0 credits</p>
-                            </footer>
-                        </div><br>
-                    </div>
-                    <div class="column">
-                        <h5 class="subtitle is-5">Spring</h5>
-                        <div class="card sem" ondrop="drop(event, spring4)" ondragover="allowDrop(event)">
-                            <div id="spring4"></div>
-                            <footer class="card-footer card-footer-padding">
-                                <p class="credits" id="cspring4">0 credits</p>
-                            </footer>
+                    <footer class="card-footer card-footer-padding">
+                        <p class="credits" id="cfall2">7 credits</p>
+                    </footer>
+                </div><br>
+                <h5 class="subtitle is-5">Spring</h5>
+                <div class="card sem" ondrop="drop(event, spring2)" ondragover="allowDrop(event)">
+                    <div id="spring2">
+                        <div class="card drag" id="EN601230" draggable="true" ondragstart="drag(event)" style="background-color: #2374C7;
+                        color: white;">
+                            <button class="delete is-small" id="dEN601230" onclick="deleteCourse('EN601230');"></button>
+                            <div class="card-content">
+                                EN.601.230<br>
+                                Mathematical Foundations for CS (4)
+                            </div>
                         </div>
                     </div>
+                    <footer class="card-footer card-footer-padding">
+                        <p class="credits" id="cspring2">4 credits</p>
+                    </footer>
+                </div>
+            </div>
+            <div class="column">
+                <h4 class="title is-4">Junior</h4>
+                <h5 class="subtitle is-5">Fall</h5>
+                <div class="card sem" ondrop="drop(event, fall3)" ondragover="allowDrop(event)">
+                    <div id="fall3">
+                        <div class="card drag" id="EN601433" draggable="true" ondragstart="drag(event)" style="background-color: #2374C7;
+                        color: white;">
+                            <button class="delete is-small" id="dEN601433" onclick="deleteCourse('EN601433');"></button>
+                            <div class="card-content">
+                                EN.601.433<br>
+                                Intro to Algorithms (3)
+                            </div>
+                        </div>
+                    </div>
+                    <footer class="card-footer card-footer-padding">
+                        <p class="credits" id="cfall3">3 credits</p>
+                    </footer>
+                </div><br>
+                <h5 class="subtitle is-5">Spring</h5>
+                <div class="card sem" ondrop="drop(event, spring3)" ondragover="allowDrop(event)">
+                    <div id="spring3"></div>
+                    <footer class="card-footer card-footer-padding">
+                        <p class="credits" id="cspring3">0 credits</p>
+                    </footer>
+                </div>
+            </div>
+            <div class="column">
+                <h4 class="title is-4">Senior</h4>
+                <h5 class="subtitle is-5">Fall</h5>
+                <div class="card sem" ondrop="drop(event, fall4)" ondragover="allowDrop(event)">
+                    <div id="fall4"></div>
+                    <footer class="card-footer card-footer-padding">
+                        <p class="credits" id="cfall4">0 credits</p>
+                    </footer>
+                </div><br>
+                <h5 class="subtitle is-5">Spring</h5>
+                <div class="card sem" ondrop="drop(event, spring4)" ondragover="allowDrop(event)">
+                    <div id="spring4"></div>
+                    <footer class="card-footer card-footer-padding">
+                        <p class="credits" id="cspring4">0 credits</p>
+                    </footer>
                 </div>
             </div>
         </div>
-        <!-- <button class="button is-info" style="float: right;"><strong>What If?</strong></button> -->
+        <button class="button is-info" style="float: right;"><strong>What If?</strong></button>
         <h4 class="title is-4" id="total" style="float: right; padding: 5px; padding-right: 10px;">22.0 credits</h4>
         <br><br><br>
     </div>
 
-    <script>
-        var url = 'https://gentle-spire-48513.herokuapp.com/https://sis.jhu.edu/api/classes?key=JjHPAfkaB7SZpfX6MnQIXXHMGARAHR8x&School=Whiting%20School%20of%20Engineering&Term=Fall%202021';
-        var SISdata = fetchJSON(url);
+    <h4 class="title is-4" style="margin-left: 40%;">Courses Suggested For You</h4>
+    <div class="card" ondrop="drop(event)" ondragover="allowDrop(event)" style="width: 450px; margin-left: 35%;">
+        <div id="suggestion">
+            <div class="card drag" id="EN601270" draggable="true" ondragstart="drag(event)">
+                <button class="delete is-small" id="dEN601270" onclick="deleteCourse('EN601270');"></button>
+                <div class="card-content">
+                    EN.601.270<br>
+                    Full Stack Javascript (3)
+                </div>
+            </div>
+
+            <div class="card drag" id="EN601290" draggable="true" ondragstart="drag(event)">
+                <button class="delete is-small" id="dEN601290" onclick="deleteCourse('EN601290');"></button>
+                <div class="card-content">
+                    EN.601.290<br>
+                    User Interfaces & Mobile Apps (3)
+                </div>
+            </div>
+
+            <div class="card drag" id="EN601318" draggable="true" ondragstart="drag(event)">
+                <button class="delete is-small" id="dEN601318" onclick="deleteCourse('EN601318');"></button>
+                <div class="card-content">
+                    EN.601.318<br>
+                    Operating Systems (3)
+                </div>
+            </div>
+
+            <div class="card drag" id="EN553311" draggable="true" ondragstart="drag(event)">
+                <button class="delete is-small" id="dEN553311" onclick="deleteCourse('EN553311');"></button>
+                <div class="card-content">
+                    EN.553.311<br>
+                    Prob & Stat for Physical / engineering (4)
+                </div>
+            </div>
+
+            <div class="card drag" id="EN601421" draggable="true" ondragstart="drag(event)">
+                <button class="delete is-small" id="dEN601421" onclick="deleteCourse('EN601421');"></button>
+                <div class="card-content">
+                    EN.601.421<br>
+                    Object Oriented Software Engineering (3)
+                </div>
+            </div>
+
+            <div class="card drag" id="AS110201" draggable="true" ondragstart="drag(event)">
+                <button class="delete is-small" id="dAS110201" onclick="deleteCourse('AS110201');"></button>
+                <div class="card-content">
+                    AS.110.201<br>
+                    Linear Algebra (4)
+                </div>
+            </div>
+
+            <div class="card drag" id="EN601482" draggable="true" ondragstart="drag(event)">
+                <button class="delete is-small" id="dEN601482" onclick="deleteCourse('EN601482');"></button>
+                <div class="card-content">
+                    EN.601.482<br>
+                    Machine Learning: Deep Learning (3)
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script type="text/javascript">
+
+        function logResult(result) {
+          console.log(result);
+        }
+        function logError(error) {
+          console.log('Looks like there was a problem: \n', error);
+        }
+        function validateResponse(response) {
+          if (!response.ok) {
+            throw Error(response.statusText);
+          }
+          return response;
+        }
+        function readResponseAsJSON(response) {
+          return response.json();
+        }
+        function fetchJSON(pathToResource) {
+          fetch(pathToResource)
+          .then(validateResponse) // 2
+          .then(readResponseAsJSON) // 3
+          //.then(logResult) // 4
+          .catch(logError);
+          return fetch(pathToResource).then(validateResponse).then(readResponseAsJSON);
+        }
+
+        let url = 'https://gentle-spire-48513.herokuapp.com/https://sis.jhu.edu/api/classes?key=JjHPAfkaB7SZpfX6MnQIXXHMGARAHR8x&School=Whiting%20School%20of%20Engineering&Term=Fall%202021';
+        let SISdata = fetchJSON(url);
+        console.log(SISdata);
+
     </script>
 
     <script type="text/javascript">
-        console.log(data);
-
         $('#txt-search').keyup(function () {
             var searchField = $(this).val();
             if (searchField === '') {
-                document.getElementById("filter-records").style.display = "none";
                 $('#filter-records').html('');
                 return;
             }
@@ -219,13 +279,12 @@
             var output = '<div class="row">';
 
             $.each(data, function (key, val) {
-                document.getElementById("filter-records").style.display = "block";
-
                 if ((val.OfferingName.search(regex) != -1) || (val.Title.search(regex) != -1)) {
-                    // code = val.OfferingName;
-                    // code = code.substring(0, 2) + code.substring(3, 6) + code.substring(7);
-                    
-                    output += '<a class=\"panel-block navbar-item\" onclick=\"addCourse(\'' + val.OfferingName + '\',\'' + val.Title + '\',\'' + val.Credits + '\',\'' + val.Areas + '\');\">' + '<div class=\"control\">' + '<h5 class=\"title is-6\">' + val.OfferingName + '</h5>' + '<p class=\"subtitle is-6\">' + val.Title + " (" + val.Credits + ")" + '</p>' + '</div>' + '</a>';
+                    code = val.OfferingName;
+                    code = code.substring(0, 2) + code.substring(3, 6) + code.substring(7);
+
+                    output += '<h5 class="title is-6" onclick="addCourse(\'' + val.OfferingName + '\',\'' + val.Title + '\',\'' + val.Credits + '\',\'' + val.Areas + '\');">' + val.OfferingName + '</h5>';
+                    output += '<p class=\"subtitle is-6\">' + val.Title + " (" + val.Credits + ")" + '</p>';
                 }
             });
             output += '</div>';
