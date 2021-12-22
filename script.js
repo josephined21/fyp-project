@@ -203,3 +203,4 @@ function getCreditsTotal() {
       calculateCredits(fall3) + calculateCredits(spring3) + calculateCredits(fall4) + calculateCredits(fall4);
     return sum;
 }
+
